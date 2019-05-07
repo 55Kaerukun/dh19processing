@@ -9,3 +9,5 @@
 * [カラー](doc/03_color.md)
 * [変数](doc/04_var.md)
 * [setupとdraw](doc/05_setupdraw.md)
+* [ランダムとノイズ](doc/06_randomnoise.md)
+* [計算](doc/07_math.md)
