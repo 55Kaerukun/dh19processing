@@ -39,13 +39,26 @@ void draw( ) {
     
     if(scene == 1){
         // シーン1だったら       
-        anime1();
+        fill(hue,100,100);
+        x = x + 20;
+        ellipse(x,height/2,400,400);
     } else if(scene == 2){
         // シーン2だったら
-        anime2();
+        fill(hue,100,100);
+        y = y + 20;
+        rect(0,y,width,height);
     } else if(scene == 3) {
         // シーン3だったら
-        anime3();
+        noFill();
+        strokeWeight(40);
+        stroke(hue,100,100);
+        //pushMatrix(); // 無くても良い
+        translate(width/2,height/2);
+        rotate(radians(theta));
+        triangle(radius*cos(radians(30)),radius*sin(radians(30)),radius*cos(radians(150)),radius*sin(radians(150)),radius*cos(radians(270)),radius*sin(radians(270)));
+        //popMatrix(); // 無くても良い
+        theta = theta + 1;
+        radius = radius + 20;
     }
 }
 
@@ -71,33 +84,4 @@ void keyPressed(){
       radius = 0;
       sd3.play(); // 再生
     }
-}
-
-
-void anime1(){
-      // シーン1だったら
-      fill(hue,100,100);
-      x = x + 20;
-      ellipse(x,height/2,400,400);
-}
-
-void anime2(){
-      // シーン2だったら
-      fill(hue,100,100);
-      y = y + 20;
-      rect(0,y,width,height);
-}
-
-void anime3(){
-      // シーン3だったら
-      noFill();
-      strokeWeight(40);
-      stroke(hue,100,100);
-      //pushMatrix(); // 無くても良い
-      translate(width/2,height/2);
-      rotate(radians(theta));
-      triangle(radius*cos(radians(30)),radius*sin(radians(30)),radius*cos(radians(150)),radius*sin(radians(150)),radius*cos(radians(270)),radius*sin(radians(270)));
-      //popMatrix(); // 無くても良い
-      theta = theta + 1;
-      radius = radius + 20;
 }
