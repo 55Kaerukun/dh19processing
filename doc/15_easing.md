@@ -36,12 +36,11 @@ void draw(){
   float distanceY = targetY - y;
   
   // 絶対座標が1以上ならアニメーションする
-  if(abs(distanceX) > 1.0 && abs(distanceY) > 1.0){
-    //現在のX座標に距離を足していく、イージングでスピードに変化を加える
-    x = x + distanceX * easing;
-    y = y + distanceY * easing;
-  }
-  
+  //現在のX座標に距離を足していく、イージングでスピードに変化を加える
+  x = x + distanceX * easing;
+  y = y + distanceY * easing;
+
+  //　塗りと円の描画
   fill(255,0,0);
   ellipse(x,y,40,40);
 }
