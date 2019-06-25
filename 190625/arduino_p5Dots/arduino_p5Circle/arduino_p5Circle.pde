@@ -1,4 +1,12 @@
-int NUM = 200; // 円の個数
+import processing.serial.*;
+
+Serial port; //Arduinoとシリアル通信する変数
+float value = 0; // Arduinoからくる値を保存する変数
+float easing = 0.05; // イージング
+float easeValue = 0; // valueをイージングで滑らかにした値
+
+
+int NUM = 255; // 円の個数
 // 座標の配列
 float[] posX = new float[NUM];
 float[] posY = new float[NUM];
@@ -13,7 +21,17 @@ float[] diameter = new float[NUM];
 
 void setup() {
     size(500, 500);
-    noStroke();
+    
+    // 自分のポート番号がSerial.list()配列の何番目かを調べる
+    //println(Serial.list());
+    
+    // Serial.list()[]の配列に自分のポート番目をいれる 
+    String arduinoPort = Serial.list()[5];
+    
+    // 変数portにarduinoからの通信を繋ぐ　
+    port = new Serial(this, arduinoPort, 9600);
+    
+    
     // 配列の初期値
     for(int i=0; i<NUM; i++){
         posX[i] = random(8,width);
@@ -28,8 +46,18 @@ void setup() {
 
 void draw() {
     background(0);
+    
+    // もしArduinoから値が届いていたら
+    if (port.available() > 0) {
+       // ポートの値をvalに保存
+       value = (int)port.read();
+       println(value);
+    }
+    // 目的地へのイージング
+    //float targetValue = value;
+    //easeValue += (targetValue - easeValue) * easing;
 
-    for(int i=0; i<NUM; i++){
+    for(int i=0; i<value; i++){
         noStroke();
         fill(col[i]);
         ellipse(posX[i], posY[i], diameter[i], diameter[i]);

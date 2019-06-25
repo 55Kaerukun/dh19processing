@@ -21,3 +21,5 @@
 * [3D](doc/00_3d.md)
 * [イージング](doc/15_easing.md)
 * [Arduino](doc/17_arduino.md)
+* [Arduino / Processing](doc/18_arduino_processing.md)
+* [シンセサイザー](doc/19_synthesizer.md)
