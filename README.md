@@ -1,6 +1,32 @@
-# DHW UIUXD 19.4月生 Processing
+# DHW UIUXD 19.4月生 Processing/openFrameworks
 
-## スケジュール
+
+
+## openFrameworksカリキュラム
+
+* [プロジェクト作成](docs/of/01_about.md)
+* [openFrameowksの基本設定](docs/of/02_settings.md)
+* [カラー](docs/of/03_color.md)
+* [図形](docs/of/04_shape.md)
+* [ベクトル](docs/of/07_vec.md)
+* [配列](docs/of/08_array.md)
+
+
+&nbsp;
+&nbsp;
+
+
+### 公式サイト
+* [公式サイト](https://openframeworks.cc/)
+* [ダウンロード](https://openframeworks.cc/ja/download/)
+* [公式リファレンス](https://openframeworks.cc/ja/documentation/)
+* [公式フォーラム](https://forum.openframeworks.cc/)
+
+&nbsp;
+&nbsp;
+
+
+## Processing カリキュラム
 
 
 * [インタラクティブ・デザイン概論](doc/00_interactive.md)
