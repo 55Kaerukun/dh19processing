@@ -4,6 +4,7 @@
 void ofApp::setup(){
     ofEnableSmoothing(); //描画をスムースに
     ofBackground(255, 255, 255);
+    ofSetFrameRate(60);
 }
 
 //--------------------------------------------------------------

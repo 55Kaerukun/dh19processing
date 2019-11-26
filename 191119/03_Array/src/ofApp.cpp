@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    ofSetFrameRate(60);
     ofBackground(0, 0, 0);
     ofSetCircleResolution(64);
 
