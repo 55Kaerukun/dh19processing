@@ -16,8 +16,8 @@
 * [ポインタ](docs/of/11_C++_pointer.md)
 * [計算](docs/of/07_math.md)
 * [ノイズ](docs/of/10_noise.md)
-* [3D](docs/of/10_3D.md)
-
+* [3D](docs/of/12_3D.md)
+* [GUI](docs/of/14_ofxGUI.md)
 
 &nbsp;
 &nbsp;
