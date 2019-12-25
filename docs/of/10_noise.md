@@ -7,18 +7,18 @@
 
 パーリンノイズの生成に使う。引数に数値を与えると0.0 から1.0 の間の数値（float）を返す。
 
-`ofNoise(t);`
+`ofNoise(time);`
 
 &nbsp;
 &nbsp;
 
 ## サンプルコード1
 ```
-float t = 3; //時間 
+float time = 3; //時間 
 
 void ofApp::update(){
 	//ノイズ関数から出力された値 
-    float n = ofNoise(t);
+    float n = ofNoise(time);
     cout << n << endl;
 }
 
@@ -34,12 +34,12 @@ void ofApp::update(){
 
 ## サンプルコード2
 ```
-float t = 3; //時間 
+float time = 3; //時間 
 
 void ofApp::update(){
 	//ノイズ関数から出力された値 
-    float n = ofNoise(t);
-    t += 0.01; //時間の値をインクリメント
+    float n = ofNoise(time);
+    time += 0.01; //時間の値をインクリメント
     cout << n << endl;
 }
 
@@ -56,23 +56,26 @@ void ofApp::update(){
 インクリメントの値が大きいとノイズの値が大きく揺れる
 
 ```
-float t = 3; //時間 
+float time = 3; //時間 
+ofVec2f pos;
 
 void ofApp::setup(){
     ofBackground(255);
     ofSetBackgroundAuto(false);
+    pos.set(0,0);
 }
 void ofApp::update(){
-    float n = ofNoise(t);
+    float n = ofNoise(time);
     // y座標にノイズ乱数（100掛けたもの）を加える
-    y = n * 100 + ofGetHeight()/2;
+    pos.y = n * 100;
     cout << n << endl;
-    t += 0.1; //時間の増減
-    x += 1; //X座標は横移動
+    time += 0.1; //時間の増減
+    pos.x += 1; //X座標は横移動
 }
 void ofApp::draw(){
-    ofSetColor(0);
-    ofDrawCircle(x, y, 1);
+	ofTranslate(0, ofGetHeight()/2);
+	ofSetColor(0);
+	ofDrawCircle(pos.x, pos.y, 1);
 }
 
 ```
@@ -88,23 +91,25 @@ void ofApp::draw(){
 ノイズ値は毎回同じ値を返すので、時間（t）の開始を変えれば異なる値を返す。
 
 ```
-float t = 3; //時間　ここを変えると値が変化する 
+float time = 3; //時間　ここを変えると値が変化する 
+ofVec2f pos;
 
 void ofApp::setup(){
     ofBackground(255);
     ofSetBackgroundAuto(false);
+    pos.set(0,0);
 }
 void ofApp::update(){
-    float n = ofNoise(t);
+    float n = ofNoise(time);
     // y座標にノイズ乱数（100掛けたもの）を加える
-    y = n * 100 + ofGetHeight()/2;
+    pos.y = n * 100;
     cout << n << endl;
-    t += 0.01; //時間の増減
-    x += 1; //X座標は横移動
+    time += 0.01; //時間の増減
+    pos.x += 1; //X座標は横移動
 }
 void ofApp::draw(){
     ofSetColor(0);
-    ofDrawCircle(x, y, 1);
+    ofDrawCircle(pos.x, pos.y, 1);
 }
 
 ```
