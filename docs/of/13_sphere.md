@@ -108,7 +108,6 @@ void ofApp::draw(){
     ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
     cam.begin();
     
-    ofPushMatrix();   
     // XYZ 球体を並べる
     for(int j=0; j<180; j+=10){
         ofVec3f pos;
@@ -120,7 +119,6 @@ void ofApp::draw(){
             ofDrawSphere(pos.x, pos.y, pos.z, 2);
         }
     }    
-    ofPopMatrix();
     
     //3Dガイド
     gridHelper(1000, 20);
